@@ -7,8 +7,8 @@ export class TarefasLista {
     get tarefas(): readonly Tarefa[] {
         return this.listaTarefas;
     }
-    addTarefa(nomeTarefa: string) {
-        this.listaTarefas.push(new Tarefa(nomeTarefa));
+    addTarefa(nomeTarefa: string,detalhe: string, data: string) {
+        this.listaTarefas.push(new Tarefa(nomeTarefa,detalhe,data));
     }
 
 }

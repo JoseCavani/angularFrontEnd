@@ -19,6 +19,8 @@
           <span *ngSwitchCase="true">Sim</span>
           <span *ngSwitchDefault>Nao</span>
         </td>
+          <td>{{ item.detalhe }}</td>
+          <td>{{ item.data }}</td>
       </tr>
     </tbody>
   </table>
@@ -26,12 +28,23 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-        <input class="form-control" placeholder="Enter task here" #todoText />
+        <input class="form-control" placeholder="Descrição" #todoText />
+        <input class="form-control" placeholder="detalhe" #todoText2 />
+        <input class="form-control" placeholder="data" #todoText3 />
       </div>
       <div class="col-auto">
-        <button class="btn btn-primary" (click)="addTarefa(todoText.value)">
+        <button class="btn btn-primary" (click)="addTarefa(todoText.value,todoText2.value,todoText3.value)">
           Adicionar
         </button>
       </div>
     </div>
   </div>
+  <div class="bg-secondary text-white text-center p-2">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" [(ngModel)]="showComplete" />
+      <label class="form-check-label" for="defaultCheck1">
+        Completas
+      </label>
+    </div>
+  </div>
+  

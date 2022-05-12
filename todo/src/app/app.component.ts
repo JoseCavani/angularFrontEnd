@@ -11,10 +11,8 @@ import { TarefasLista } from "src/Models/tarefaLista";
 
 export class AppComponent {
   private list = new TarefasLista("Senac", [
-    new Tarefa("Estudar HTML"),
-    new Tarefa("Estudar CSS"),
-    new Tarefa ("Estudar JAVASCRIPT"),
-    ]);
+    new Tarefa("Estudar HTML","detalhe","adsa")
+      ]);
     get username(): string {
       return this.list.usuario; 
      }
@@ -25,9 +23,9 @@ export class AppComponent {
         return this.list.tarefas.filter(item =>!item.completo);
       }
       
-      addTarefa(newItem: string) {
-        if (newItem != "") {
-          this.list.addTarefa(newItem);
+      addTarefa(nomeTarefa: string,detalhe: string, data: string) {
+        if (nomeTarefa != "") {
+          this.list.addTarefa(nomeTarefa,detalhe,data);
         }
       }
       showComplete: boolean = false;
